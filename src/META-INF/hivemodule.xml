@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module id="com.polarion.alm.extensions.widgets" version="1.0.0">
+
+	<contribution configuration-id="com.polarion.alm.richpages.widgets">
+		<widget id="com.polarion.alm.extensions.widgets.csv.CSVBasedTableWidget" instance="instance:com.polarion.alm.extensions.widgets.csv.CSVBasedTableWidget"/>
+		<widget id="com.polarion.alm.extensions.widgets.csv.CSVBasedTrendChartWidget" instance="instance:com.polarion.alm.extensions.widgets.csv.CSVBasedTrendChartWidget"/>
+	</contribution>
+	
+</module>
