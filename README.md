@@ -6,7 +6,7 @@ This Polarion® ALM™ extension contains several extra widgets usable in LiveRe
 
 ## Requirements
 
-- Polarion® ALM™ 2015 or newer (tested with 2015 SR3)
+- Polarion® ALM™ 2015 or newer
 
 ## Installation
 
