@@ -1,6 +1,6 @@
 # Extra Widgets for Polarion® ALM™
 
-Copyright (C) 2004-2015 Polarion Software
+Copyright (C) 2004-2016 Polarion Software
 
 This Polarion® ALM™ extension contains several extra widgets usable in LiveReport Pages.
 
@@ -35,10 +35,12 @@ Table widget visualizes CSV file as simple table with header:
 
 ![CSV-based Table Widget Screenshot](https://raw.githubusercontent.com/Polarion/com.polarion.alm.extensions.widgets/master/docs/table.png)
 
+Example CSV file named `table_example.csv` is in the `docs` folder. It is derived from real report of the number of days spent on an activity in various years.
+
 #### Parameters
 
 - *Data Source*
-  - *Data Location*: path within main Subversion repository (e.g. `/TestProject/.polarion/reports/data.csv`)
+  - *Data Location*: path within main Subversion repository (e.g. `/TestProject/.polarion/reports/table_example.csv`)
   - *Field Separator*: CSV field separator
 
 ### CSV-based Trend Chart Widget
@@ -49,11 +51,13 @@ Trend chart widget visualizes one or multiple CSV files as trend chart:
 
 The first field of all CSV records must be date formatted as `yyyy-MM-dd`, other fields must be integers. The file does not have to be sorted and there might be gaps in dates.
 
+Example CSV file named `chart_example.csv` is in the `docs` folder. It is derived from real report of the number of sent and received mails to a shared mailbox.
+
 #### Parameters
 
 - *Title*: chart title (can be empty)
 - *Data Source*
-  - *Data Location*: path within main Subversion repository (e.g. `/TestProject/.polarion/reports/data.csv`)
+  - *Data Location*: path within main Subversion repository (e.g. `/TestProject/.polarion/reports/chart_example.csv`)
   - *Field Separator*: CSV field separator
 - *Additional Data Sources*
   - *Data Source*
