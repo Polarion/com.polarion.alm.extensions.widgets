@@ -6,4 +6,5 @@ Bundle-Version: 1.0.0
 Bundle-Vendor: Polarion Software
 Require-Bundle: com.polarion.alm.ui;bundle-version="3.9.0",
  com.polarion.core.util;bundle-version="3.9.0",
- com.polarion.platform.persistence;bundle-version="3.9.0"
+ com.polarion.platform.persistence;bundle-version="3.9.0",
+ com.polarion.alm.tracker;bundle-version="3.9.0"

@@ -29,6 +29,8 @@ import com.polarion.alm.shared.api.model.rp.widget.RichPageWidgetRenderingContex
 import com.polarion.alm.shared.api.utils.html.HtmlContentBuilder;
 import com.polarion.alm.shared.api.utils.html.HtmlTagBuilder;
 import com.polarion.alm.shared.util.StringUtils;
+import com.polarion.alm.tracker.ITrackerService;
+import com.polarion.alm.tracker.calendar.IWorkingCalendar;
 import com.polarion.platform.core.PlatformContext;
 import com.polarion.platform.persistence.IDataService;
 import com.polarion.platform.service.repository.IRepositoryReadOnlyConnection;
@@ -93,6 +95,10 @@ public class Utils {
 
     }
 
+    static IWorkingCalendar getWorkingCalendar() {
+        return PlatformContext.getPlatform().lookupService(ITrackerService.class).getPlanningManager().getDefaultWorkingCalendar();
+    }
+
     public static final class Dates {
         public final @NotNull Date from;
         public final @NotNull Date to;
@@ -102,46 +108,14 @@ public class Utils {
             this.to = to;
         }
 
-        public int calculateDaysBetween(@NotNull DayType dayType) {
-            int days = 0;
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(from);
-            while (cal.getTimeInMillis() <= to.getTime()) {
-                int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
-                if (dayType.isCalendarDayOfWeek(dayOfWeek)) {
-                    days++;
-                }
-                cal.add(Calendar.DAY_OF_MONTH, 1);
-            }
-            return days;
+        public int calculateWorkingDaysBetween() {
+            return getWorkingCalendar().numberOfWorkingDays(from, to);
         }
 
         @Override
         public String toString() {
             return "Dates [from=" + from + ", to=" + to + "]";
         }
-    }
-
-    public enum DayType {
-        work {
-            @Override
-            public boolean isCalendarDayOfWeek(int calendarDayOfWeek) {
-                return (calendarDayOfWeek != Calendar.SATURDAY && calendarDayOfWeek != Calendar.SUNDAY);
-            }
-        },
-        weekend {
-            @Override
-            public boolean isCalendarDayOfWeek(int calendarDayOfWeek) {
-                return (calendarDayOfWeek == Calendar.SATURDAY || calendarDayOfWeek == Calendar.SUNDAY);
-            }
-        },
-        any {
-            @Override
-            public boolean isCalendarDayOfWeek(int calendarDayOfWeek) {
-                return true;
-            }
-        };
-        abstract public boolean isCalendarDayOfWeek(int calendarDayOfWeek);
     }
 
     public static final class LoadedContent {

@@ -92,7 +92,7 @@ If *Scale* is set to something else than `day` then it is necessary to choose on
 #### Text Processing
 
 *Text Above* and *Text Below* may contain special sequences:
-- `${_workingDays}`: number of working days in the visible interval (uses simple algorithm which ignores Saturdays and Sundays)
+- `${_workingDays}`: number of working days in the visible interval (based on default Polarion calendar)
 - `${`*Data Key*`}`: sum of all values for given data key in the visible interval (e.g. `${Mailbox.Received}`)
 - `${`*Data Key*`PerDay}`: sum of all values for given data key in the visible interval divided by number of working days (e.g. `${Mailbox.ReceivedPerDay}`)
 - `${_timestamp}`: last modified time of the main CSV file

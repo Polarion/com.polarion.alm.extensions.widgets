@@ -30,7 +30,6 @@ import org.jetbrains.annotations.Nullable;
 
 import com.polarion.alm.extensions.widgets.common.Utils;
 import com.polarion.alm.extensions.widgets.common.Utils.Dates;
-import com.polarion.alm.extensions.widgets.common.Utils.DayType;
 import com.polarion.alm.extensions.widgets.common.Utils.RequiredParameterException;
 import com.polarion.alm.extensions.widgets.csv.CSVData.Visitor;
 import com.polarion.alm.shared.api.model.rp.parameter.CompositeParameter;
@@ -105,7 +104,7 @@ public class CSVBasedTrendChartWidgetRenderer {
     }
 
     private @NotNull String[] processTexts(@Nullable String textAbove, @Nullable String textBelow, @NotNull Dates dates) {
-        int workingDays = dates.calculateDaysBetween(DayType.work);
+        int workingDays = dates.calculateWorkingDaysBetween();
 
         Map<String, Integer> statistics = computeStatistics(data);
         if (textAbove != null) {
