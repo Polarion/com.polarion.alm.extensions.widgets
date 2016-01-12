@@ -10,7 +10,7 @@ This Polarion® ALM™ extension contains several extra widgets usable in LiveRe
 
 ## Installation
 
-1. Download packaged extension from http://extensions.polarion.com/extensions/.
+1. Download packaged extension from http://extensions.polarion.com/extensions/292-extra-widgets-for-polarion-alm
 2. Stop Polarion server.
 3. Extract `com.polarion.alm.extensions.widgets.zip` into `<Polarion Installation>/polarion/extensions`.
 4. Start Polarion server.
