@@ -28,7 +28,6 @@ import com.polarion.alm.shared.api.model.rp.parameter.StringParameter;
 import com.polarion.alm.shared.api.model.rp.widget.RichPageWidgetRenderingContext;
 import com.polarion.alm.shared.api.utils.html.HtmlContentBuilder;
 import com.polarion.alm.shared.api.utils.html.HtmlTagBuilder;
-import com.polarion.alm.shared.util.StringUtils;
 import com.polarion.alm.tracker.ITrackerService;
 import com.polarion.alm.tracker.calendar.IWorkingCalendar;
 import com.polarion.platform.core.PlatformContext;
@@ -48,7 +47,11 @@ public class Utils {
     }
 
     public static @Nullable String getStringParameterValue(@NotNull StringParameter parameter) {
-        return StringUtils.getNullOrNotEmpty(parameter.value());
+        String value = parameter.value();
+        if (value == null || value.trim().isEmpty()) {
+            return null;
+        }
+        return value;
     }
 
     public static @NotNull String getRequiredStringParameterValue(@NotNull StringParameter parameter) throws RequiredParameterException {
