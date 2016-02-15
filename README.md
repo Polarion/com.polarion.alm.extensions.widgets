@@ -33,7 +33,7 @@ CSV file format used by these widgets:
 
 Table widget visualizes CSV file as simple table with header:
 
-![CSV-based Table Widget Screenshot](https://raw.githubusercontent.com/Polarion/com.polarion.alm.extensions.widgets/master/docs/table.png)
+![CSV-based Table Widget Screenshot](docs/table.png)
 
 Example CSV file named `table_example.csv` is in the `docs` folder. It is derived from real report of the number of days spent on an activity in various years.
 
@@ -47,7 +47,7 @@ Example CSV file named `table_example.csv` is in the `docs` folder. It is derive
 
 Trend chart widget visualizes one or multiple CSV files as trend chart:
 
-![CSV-based Trend Chart Widget Screenshot](https://raw.githubusercontent.com/Polarion/com.polarion.alm.extensions.widgets/master/docs/chart.png)
+![CSV-based Trend Chart Widget Screenshot](docs/chart.png)
 
 The first field of all CSV records must be date formatted as `yyyy-MM-dd`, other fields must be integers. The file does not have to be sorted and there might be gaps in dates.
 
