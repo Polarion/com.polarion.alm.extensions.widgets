@@ -1,6 +1,6 @@
 # Extra Widgets for Polarion® ALM™
 
-Copyright (C) 2004-2016 Polarion Software
+Copyright 2016 Polarion AG
 
 This Polarion® ALM™ extension contains several extra widgets usable in LiveReport Pages.
 
